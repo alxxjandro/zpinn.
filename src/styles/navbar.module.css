@@ -1,7 +1,57 @@
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 0rem 1.6rem 0rem;
+}
 
 .title {
-  font-family: var(--font-title);
+  flex: 2;
+  display: flex;
+  justify-content: center;
   font-size: var(--font-heading-size);
+  font-weight: bolder;
   color: var(--color-heading);
-  border: solid 1px red;
+}
+
+.title h1 {
+  font-family: var(--font-title);
+}
+
+/* all of them */
+.btns {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  padding: 0.4rem 0 0 0;
+}
+
+/* home and shop btns */
+.textBtn {
+  border: none;
+  font-weight: 600;
+  font-size: var(--text-5);
+  cursor: pointer;
+  color: var(--color-heading);
+  transition: all 0.15s ease-in;
+}
+
+.cart {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border: none;
+  border: solid 1px transparent;
+  padding-bottom: 2px;
+  transition: all 0.15s ease-in;
+}
+
+.textBtn:hover {
+  color: var(--color-subtitle);
+}
+
+.cart:hover {
+  opacity: 0.75;
 }

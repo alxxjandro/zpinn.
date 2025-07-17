@@ -2,21 +2,18 @@ import LandingPage from "./pages/LandinPage";
 import Shop from "./pages/Shop";
 import Cart from "./pages/Cart";
 import ErrorPage from "./pages/ErrorPage";
+import Layout from "./pages/Layout";
 
 const routes = [
   {
     path: "/",
-    element: <LandingPage />,
+    element: <Layout />,
     errorElement: <ErrorPage />,
-  },
-  {
-    path: "/shop",
-    element: <Shop />,
-    errorElement: <ErrorPage />,
-  },
-  {
-    path: "/shop/cart",
-    element: <Cart />,
+    children: [
+      { path: "", element: <LandingPage /> },
+      { path: "shop", element: <Shop /> },
+      { path: "shop/cart", element: <Cart /> },
+    ],
   },
 ];
 

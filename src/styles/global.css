@@ -1,27 +1,63 @@
-@import url('https://fonts.googleapis.com/css2?family=Fugaz+One&family=Playfair+Display&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Fugaz+One&family=Playfair+Display&display=swap");
 
 :root {
   /* colors */
-  --color-heading: #1E1E1E;
-  --color-subtitle: #4B4B4B;
-  --color-bg: #F9F9F9;
-  --color-border: #B6B6B6;
-  --color-card-bg: #E0E0E0;
+  --color-heading: #1e1e1e;
+  --color-subtitle: #4b4b4b;
+  --color-bg: #f9f9f9;
+  --color-border: #b6b6b6;
+  --color-card-bg: #e0e0e0;
 
   /* fonts */
-  --font-title: 'Playfair Display', serif;
-  --font-main: 'Fugaz One', cursive;
+  --font-title: "Playfair Display", serif;
+  --font-main: "Funnel Display", sans-serif;
+
+  /* text */
+  --text-1: 0.75rem; /* 12px */
+  --text-2: 0.875rem; /* 14px */
+  --text-3: 1rem; /* 16px */
+  --text-4: 1.25rem; /* 20px */
+  --text-5: 1.5rem; /* 24px */
+  --text-6: 2rem; /* 32px */
+  --text-7: 2.5rem; /* 40px */
+  --text-8: 3rem; /* 48px */
+  --text-9: 4rem; /* 64px */
 
   /* sizes */
   --font-heading-size: 24px;
   --font-subtitle-size: 16px;
   --border-radius: 8px;
   --border: 1px solid var(--color-border);
-
 }
 
-body{
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+button,
+div {
+  font-family: var(--font-main);
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  background-color: var(--color-bg);
+}
+
+.selected {
+  position: relative;
+  font-weight: bold; /* opcional */
+}
+
+.selected::after {
+  content: "";
+  position: absolute;
+  bottom: -6px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 16px;
+  height: 6px;
+  background-color: var(--color-heading);
+  border-radius: 80%;
 }
