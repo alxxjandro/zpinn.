@@ -1,0 +1,7 @@
+
+.title {
+  font-family: var(--font-title);
+  font-size: var(--font-heading-size);
+  color: var(--color-heading);
+  border: solid 1px red;
+}

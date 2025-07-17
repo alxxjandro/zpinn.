@@ -1,0 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=Fugaz+One&family=Playfair+Display&display=swap');
+
+:root {
+  /* colors */
+  --color-heading: #1E1E1E;
+  --color-subtitle: #4B4B4B;
+  --color-bg: #F9F9F9;
+  --color-border: #B6B6B6;
+  --color-card-bg: #E0E0E0;
+
+  /* fonts */
+  --font-title: 'Playfair Display', serif;
+  --font-main: 'Fugaz One', cursive;
+
+  /* sizes */
+  --font-heading-size: 24px;
+  --font-subtitle-size: 16px;
+  --border-radius: 8px;
+  --border: 1px solid var(--color-border);
+
+}
+
+body{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
