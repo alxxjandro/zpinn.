@@ -1,13 +1,18 @@
 import landing from "../styles/landing.module.css";
 import LandingVinyl from "../components/LandingVinyl";
-import { useOutletContext } from "react-router-dom";
+import { useOutletContext, useNavigate } from "react-router-dom";
 import bgxl from "../assets/bg-xl.jpg";
 import bgmd from "../assets/bg-md.jpg";
 import bgsm from "../assets/bg-sm.jpg";
 
 function LandingPage() {
-  const { albums, loading } = useOutletContext();
-  console.log(albums);
+  const { albums, loading, setSelected } = useOutletContext();
+  const navigate = useNavigate();
+
+  const goShop = () =>{
+    setSelected("shop");
+    navigate("/shop");
+  }
 
   return (
     <>
@@ -23,7 +28,7 @@ function LandingPage() {
             Start browsing our collection and enjoy{" "}
             <span className="strong">up to 50%</span> off your first order
           </h2>
-          <button>Shop now</button>
+          <button onClick={goShop}>Shop now</button>
         </div>
       </div>
       <div className={landing.favorites}>

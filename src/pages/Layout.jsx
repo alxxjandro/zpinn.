@@ -8,6 +8,7 @@ import { useEffect, useState } from "react";
 function Layout() {
   const [albums, setAlbums] = useState(null);
   const [loading, setLoading] = useState(true);
+  const [selected, setSelected] = useState("home");
 
   useEffect(() => {
     if (albums !== null) return;
@@ -35,8 +36,8 @@ function Layout() {
 
   return (
     <div>
-      <Navbar />
-      <Outlet context={{ albums, loading }} />
+      <Navbar selected={selected} setSelected={setSelected} />
+      <Outlet context={{ albums, loading, selected, setSelected }} />
       <Footer />
     </div>
   );
