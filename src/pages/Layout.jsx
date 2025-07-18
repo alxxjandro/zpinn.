@@ -7,6 +7,7 @@ import { useEffect, useState } from "react";
 
 function Layout() {
   const [albums, setAlbums] = useState(null);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     if (albums !== null) return;
@@ -14,6 +15,7 @@ function Layout() {
       try {
         const results = await Promise.all(albumLinks.map((a) => fetchAlbum(a)));
         setAlbums(results);
+        setLoading(false);
       } catch (e) {
         console.error("An error ocurred while fetching albums ", e);
       }
@@ -34,7 +36,7 @@ function Layout() {
   return (
     <div>
       <Navbar />
-      <Outlet context={{ albums }} />
+      <Outlet context={{ albums, loading }} />
       <Footer />
     </div>
   );

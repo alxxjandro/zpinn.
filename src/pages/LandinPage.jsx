@@ -1,9 +1,12 @@
 import landing from "../styles/landing.module.css";
 import LandingVinyl from "../components/LandingVinyl";
 import { useOutletContext } from "react-router-dom";
+import bgxl from "../assets/bg-xl.jpg";
+import bgmd from "../assets/bg-md.jpg";
+import bgsm from "../assets/bg-sm.jpg";
 
 function LandingPage() {
-  const { albums } = useOutletContext();
+  const { albums,loading } = useOutletContext();
   console.log(albums);
 
   return (
@@ -29,6 +32,9 @@ function LandingPage() {
           <span className="strong">no algorithms needed.</span>{" "}
         </h1>
         <div className={landing.cards}>
+          {loading && (
+            <h1>loading...</h1>
+          )}
           {albums &&
             albums.map((a) => (
               <LandingVinyl
@@ -40,6 +46,26 @@ function LandingPage() {
               />
             ))}
         </div>
+        </div>
+        <div className={landing.soon}>
+          <img
+            srcSet={`
+                    ${bgsm} 480w,
+                    ${bgmd} 768w,
+                    ${bgxl} 1024w
+                `}
+            sizes="
+                    (max-width: 600px) 100vw,
+                    (max-width: 1024px) 90vw,
+                    1024px
+                "
+            src={bgxl}
+            alt="a pretty cool collection of vinyls"
+            className={landing.soonImg}
+          />
+          <div className={landing.soonContent}>
+            hola
+          </div>
       </div>
     </>
   );
