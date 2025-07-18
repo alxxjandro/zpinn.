@@ -231,6 +231,10 @@
     min-height: 280px;
   }
 
+  .soon{
+    margin-bottom: 3rem;
+  }
+
   .soonContent {
     width: 80%;
     min-height: 520px;
@@ -310,6 +314,10 @@
   .img {
     max-width: 240px;
     min-height: 240px;
+  }
+
+  .soon{
+    margin-bottom: 3rem;
   }
 
   .soonContent {
