@@ -32,7 +32,6 @@ function Navbar() {
         <IconBtn
           classN={navbar.cart}
           Icon={RiShoppingCartLine}
-          size={32}
           route={"/shop/cart"}
           setSelected={setSelected}
           selected={selected}

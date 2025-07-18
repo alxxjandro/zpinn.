@@ -1,0 +1,100 @@
+.header {
+  min-height: 60vh;
+  background-image: url("../assets/header-xl.jpg");
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.overlay {
+  color: var(--color-bg);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.overlay,
+.overlay > h1,
+.overlay > h2 {
+  background-color: transparent;
+  font-weight: normal;
+}
+
+.overlay > h1 {
+  text-align: center;
+  font-size: var(--text-10);
+}
+
+.overlay > h2 {
+  padding: 2rem 0 1rem 0;
+  text-align: center;
+  font-size: var(--text-5);
+}
+
+.overlay > button {
+  padding: 0.8rem 3.8rem;
+  border-radius: var(--border-radius);
+  border: none;
+  font-size: var(--text-3);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.overlay > button:hover {
+  background-color: var(--color-card-bg);
+}
+
+.overlay > button:active {
+  opacity: 0.9;
+}
+
+/* responsive images for smaller devices */
+/* Tablet (481px - 1024px) */
+@media (min-width: 481px) and (max-width: 1024px) {
+  .overlay > h1 {
+    font-size: var(--text-8);
+  }
+
+  .overlay > h2 {
+    font-size: var(--text-4);
+    padding: 1.5rem 1rem 1rem 1rem;
+  }
+
+  .overlay > button {
+    font-size: var(--text-2);
+    padding: 0.7rem 3rem;
+  }
+
+  .header {
+    background-image: url("../assets/header-md.jpg"); /* opcional, para pantallas intermedias */
+  }
+}
+
+/* Móvil (hasta 480px) */
+@media (max-width: 480px) {
+  .overlay > h1 {
+    font-size: var(--text-6);
+  }
+
+  .overlay > h2 {
+    font-size: var(--text-3);
+    padding: 1.2rem 0.6rem 1rem 0.6rem;
+  }
+
+  .overlay > button {
+    font-size: var(--text-1);
+    padding: 0.6rem 2.5rem;
+  }
+
+  .header {
+    background-image: url("../assets/header-sm.jpg");
+    padding: 1rem;
+  }
+
+  .overlay {
+    text-align: center;
+  }
+}

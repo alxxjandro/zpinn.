@@ -1,14 +1,6 @@
 import { Link } from "react-router-dom";
 
-function IconBtn({
-  Icon,
-  classN,
-  size,
-  route,
-  selected,
-  setSelected,
-  textcontent,
-}) {
+function IconBtn({ Icon, classN, route, selected, setSelected, textcontent }) {
   const handleClick = () => {
     setSelected(textcontent);
   };
@@ -22,7 +14,7 @@ function IconBtn({
             selected === textcontent ? classN + " " + "selected" : classN
           }
         >
-          <Icon size={size} />
+          <Icon />
         </button>
       </Link>
     </>

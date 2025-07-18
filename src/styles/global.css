@@ -22,11 +22,12 @@
   --text-7: 2.5rem; /* 40px */
   --text-8: 3rem; /* 48px */
   --text-9: 4rem; /* 64px */
+  --text-10: 5rem;
 
   /* sizes */
   --font-heading-size: 24px;
   --font-subtitle-size: 16px;
-  --border-radius: 8px;
+  --border-radius: 12px;
   --border: 1px solid var(--color-border);
 }
 
@@ -60,4 +61,18 @@ div {
   height: 6px;
   background-color: var(--color-heading);
   border-radius: 80%;
+}
+
+@media (max-width: 480px) {
+  .selected::after {
+    width: 8px;
+    height: 4px;
+  }
+}
+
+@media (min-width: 481px) and (max-width: 1024px) {
+  .selected::after {
+    width: 14px;
+    height: 4px;
+  }
 }
