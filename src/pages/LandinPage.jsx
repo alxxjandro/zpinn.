@@ -6,7 +6,7 @@ import bgmd from "../assets/bg-md.jpg";
 import bgsm from "../assets/bg-sm.jpg";
 
 function LandingPage() {
-  const { albums,loading } = useOutletContext();
+  const { albums, loading } = useOutletContext();
   console.log(albums);
 
   return (
@@ -32,9 +32,7 @@ function LandingPage() {
           <span className="strong">no algorithms needed.</span>{" "}
         </h1>
         <div className={landing.cards}>
-          {loading && (
-            <h1>loading...</h1>
-          )}
+          {loading && <h1>loading...</h1>}
           {albums &&
             albums.map((a) => (
               <LandingVinyl
@@ -46,26 +44,50 @@ function LandingPage() {
               />
             ))}
         </div>
-        </div>
-        <div className={landing.soon}>
-          <img
-            srcSet={`
+      </div>
+      <div className={landing.soon}>
+        <h2 className={landing.credits}>
+          Photo by{" "}
+          <a
+            target="blank"
+            href="https://unsplash.com/photos/black-vinyl-record-on-black-vinyl-record-fi3_lDi3qPE"
+          >
+            Eric Krull
+          </a>{" "}
+          on{" "}
+          <a target="blank" href="https://unsplash.com/">
+            Unsplash
+          </a>{" "}
+        </h2>
+        <img
+          srcSet={`
                     ${bgsm} 480w,
                     ${bgmd} 768w,
                     ${bgxl} 1024w
                 `}
-            sizes="
+          sizes="
                     (max-width: 600px) 100vw,
                     (max-width: 1024px) 90vw,
                     1024px
                 "
-            src={bgxl}
-            alt="a pretty cool collection of vinyls"
-            className={landing.soonImg}
-          />
-          <div className={landing.soonContent}>
-            hola
-          </div>
+          src={bgxl}
+          alt="a pretty cool collection of vinyls"
+          className={landing.soonImg}
+        />
+        <div className={landing.soonContent}>
+          <h1>
+            <span>zpinn</span>ing soon...
+          </h1>
+          <h2>
+            <span>zpinn.</span> is not a real store it's a concept made to
+            explore design, music, and experience. <br /> The records don't
+            spin. <span>Yet.</span>
+          </h2>
+          <h2>
+            Made for practice. <span>Inspired</span> by records. Built as part
+            of <span>The Odin Project's</span> curriculum.
+          </h2>
+        </div>
       </div>
     </>
   );

@@ -1,4 +1,3 @@
-
 /* first header */
 .header {
   min-height: 60vh;
@@ -106,7 +105,17 @@
 }
 
 /* zpinning soon */
-.soon{
+
+.credits {
+  position: absolute;
+  padding: 1rem;
+  font-weight: 100;
+  font-size: var(--text-3);
+  top: 0;
+  left: 0;
+}
+
+.soon {
   position: relative;
   z-index: 1;
   min-height: 700px;
@@ -119,7 +128,7 @@
   justify-content: center;
 }
 
-.soonImg{
+.soonImg {
   position: absolute;
   inset: 0;
   width: 100%;
@@ -134,13 +143,40 @@
   overflow: hidden;
 }
 
-.soonContent{
-  min-width: 70%;
+.soonContent {
+  width: 70%;
   min-height: 550px;
-  background-color: rgba(255, 255, 255, 0.4); /* ajusta si quieres otro color base */
+  background-color: rgba(255, 255, 255, 0.5);
   backdrop-filter: blur(6px);
   -webkit-backdrop-filter: blur(6px);
   border-radius: 1rem;
+  color: var(--color-heading);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* gap: 2rem; */
+}
+
+.soonContent > h1 {
+  font-size: var(--text-10);
+  padding: 3rem 1rem;
+}
+
+.soonContent > h1 > span {
+  font-family: var(--font-title);
+}
+
+.soonContent > h2 {
+  margin-bottom: 1rem;
+  font-size: var(--text-6);
+  max-width: 900px;
+  padding: 0 2rem;
+  font-weight: 100;
+}
+
+.soonContent > h2 > span {
+  font-family: var(--font-title);
+  font-weight: bold;
 }
 
 /* media querys */
@@ -195,10 +231,26 @@
     min-height: 280px;
   }
 
-  .soonContent{
-    border: solid 1px blue;
-    min-width: 85%;
-    min-height: 600px;
+  .soonContent {
+    width: 80%;
+    min-height: 520px;
+    padding: 2rem;
+    gap: 1.5rem;
+  }
+
+  .soonContent > h1 {
+    font-size: var(--text-8);
+    padding: 2.5rem 1rem;
+  }
+
+  .soonContent > h2 {
+    font-size: var(--text-4);
+    padding: 0 1.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .credits {
+    font-size: var(--text-2);
   }
 }
 
@@ -260,9 +312,26 @@
     min-height: 240px;
   }
 
-  .soonContent{
-    border: solid 1px green;
-    min-width: 80%;
-    min-height: 550px;
+  .soonContent {
+    width: 90%;
+    min-height: 380px;
+    padding: 2rem 1rem;
+    text-align: center;
+    gap: 1rem;
+  }
+
+  .soonContent > h1 {
+    font-size: var(--text-6);
+    padding: 2rem 1rem;
+  }
+
+  .soonContent > h2 {
+    font-size: var(--text-3);
+    padding: 0 1rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .credits {
+    font-size: var(--text-1);
   }
 }
