@@ -3,6 +3,7 @@
   align-items: center;
   justify-content: space-between;
   padding: 1rem 0rem 1.6rem 0rem;
+  background-color: var(--color-bg);
 }
 
 .title {
@@ -35,6 +36,7 @@
   cursor: pointer;
   color: var(--color-heading);
   transition: all 0.15s ease-in;
+  background-color: var(--color-bg);
 }
 
 .cart {
@@ -47,6 +49,7 @@
   padding-bottom: 2px;
   transition: all 0.15s ease-in;
   font-size: var(--text-5);
+  background-color: var(--color-bg);
 }
 
 .textBtn:hover {

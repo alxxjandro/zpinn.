@@ -1,21 +1,18 @@
-import headerxl from "../assets/header-xl.jpg";
-import headermd from "../assets/header-md.jpg";
-import headersm from "../assets/header-sm.jpg";
-import lading from "../styles/lading.module.css";
+import landing from "../styles/landing.module.css";
 
 function LandingPage() {
   return (
-    <div className={lading.header}>
-      <div className={lading.overlay}>
+    <div className={landing.header}>
+      <div className={landing.overlay}>
         <h1>
-          <strong>Timeless</strong> records.
+          <span className="strong">Timeless</span> records.
         </h1>
         <h1>
-          Curated for <strong>modern</strong> listeners.
+          Curated for <span className="strong">modern</span> listeners.
         </h1>
         <h2>
-          Start browsing our collection and enjoy <strong>up to 50%</strong> off
-          your first order
+          Start browsing our collection and enjoy{" "}
+          <span className="strong">up to 50%</span> off your first order
         </h2>
         <button>Shop now</button>
       </div>

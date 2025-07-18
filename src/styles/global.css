@@ -4,7 +4,7 @@
   /* colors */
   --color-heading: #1e1e1e;
   --color-subtitle: #4b4b4b;
-  --color-bg: #f9f9f9;
+  --color-bg: #f9f9f9; /* also for white text */
   --color-border: #b6b6b6;
   --color-card-bg: #e0e0e0;
 
@@ -43,7 +43,7 @@ div {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  background-color: var(--color-bg);
+  /* background-color: var(--color-bg); */
 }
 
 .selected {
@@ -61,6 +61,19 @@ div {
   height: 6px;
   background-color: var(--color-heading);
   border-radius: 80%;
+}
+
+.strong {
+  font-weight: bold;
+}
+
+a {
+  color: var(--color-bg);
+  cursor: pointer;
+}
+
+a:hover {
+  opacity: 0.8;
 }
 
 @media (max-width: 480px) {

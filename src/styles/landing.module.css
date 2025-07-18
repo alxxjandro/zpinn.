@@ -20,7 +20,7 @@
 .overlay > h1,
 .overlay > h2 {
   background-color: transparent;
-  font-weight: normal;
+  font-weight: 100;
 }
 
 .overlay > h1 {
@@ -52,7 +52,6 @@
 }
 
 /* responsive images for smaller devices */
-/* Tablet (481px - 1024px) */
 @media (min-width: 481px) and (max-width: 1024px) {
   .overlay > h1 {
     font-size: var(--text-8);
@@ -69,11 +68,10 @@
   }
 
   .header {
-    background-image: url("../assets/header-md.jpg"); /* opcional, para pantallas intermedias */
+    background-image: url("../assets/header-md.jpg");
   }
 }
 
-/* Móvil (hasta 480px) */
 @media (max-width: 480px) {
   .overlay > h1 {
     font-size: var(--text-6);
