@@ -16,6 +16,14 @@ function Layout() {
     const path = location.pathname.slice(1); //slincing the "/"
     return path || "home";
   });
+  const [cartItems, setCartItems] = useState(() => {
+    const saved = localStorage.getItem("cartItems");
+    return saved ? JSON.parse(saved) : [];
+  });
+  
+  useEffect(() => {
+    localStorage.setItem("cartItems", JSON.stringify(cartItems));
+  }, [cartItems]);
 
   useEffect(() => {
     const cached = localStorage.getItem("albums");
@@ -73,7 +81,7 @@ function Layout() {
     <div>
       <Navbar selected={selected} setSelected={setSelected} />
       <Outlet
-        context={{ setAlbums, albums, loading, selected, setSelected, error }}
+        context={{ setAlbums, albums, loading, selected, setSelected, error, cartItems, setCartItems }}
       />
       <Footer />
     </div>

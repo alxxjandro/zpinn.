@@ -32,6 +32,7 @@
   font-family: var(--font-main);
   cursor: pointer;
   transform: all 0.2s ease;
+  background-color: var(--color-bg);
 }
 
 .cards {

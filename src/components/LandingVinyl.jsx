@@ -12,6 +12,7 @@ function LandingVinyl({
   price,
   handleLike,
   like,
+  handleCart
 }) {
   return (
     <div className={landing.card}>
@@ -29,7 +30,7 @@ function LandingVinyl({
                 {" "}
                 {like ? <FaHeart /> : <FaRegHeart />}{" "}
               </button>
-              <button>Add to cart</button>
+              <button onClick={handleCart}>Add to cart</button>
             </div>
           </div>
         )}
