@@ -5,7 +5,7 @@ import Navbtn from "./NavBtn";
 import { useState } from "react";
 import { useOutletContext } from "react-router-dom";
 
-function Navbar({selected, setSelected}) {
+function Navbar({ selected, setSelected }) {
   return (
     <div className={navbar.navbar}>
       <div className={navbar.btns}>

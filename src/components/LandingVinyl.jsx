@@ -1,12 +1,12 @@
 import landing from "../styles/landing.module.css";
 
-function LandingVinyl({ imgsrc, name, info, year }) {
+function LandingVinyl({ imgsrc, artist, album, year, genre, header }) {
   return (
     <div className={landing.card}>
-      <img className={landing.img} src={imgsrc} alt={name + " album cover"} />
-      <h1>{name.split("-")[1]}</h1>
+      <img className={landing.img} src={imgsrc} alt={album + " album cover"} />
+      <h1>{album}</h1>
       <h2>
-        {name.split("-")[0]} • {year} • {info}
+        {artist} • {year} • {genre}
       </h2>
     </div>
   );

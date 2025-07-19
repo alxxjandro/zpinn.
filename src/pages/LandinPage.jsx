@@ -6,13 +6,13 @@ import bgmd from "../assets/bg-md.jpg";
 import bgsm from "../assets/bg-sm.jpg";
 
 function LandingPage() {
-  const { albums, loading, setSelected } = useOutletContext();
+  const { albums, loading, setSelected, error } = useOutletContext();
   const navigate = useNavigate();
 
-  const goShop = () =>{
+  const goShop = () => {
     setSelected("shop");
     navigate("/shop");
-  }
+  };
 
   return (
     <>
@@ -38,16 +38,26 @@ function LandingPage() {
         </h1>
         <div className={landing.cards}>
           {loading && <h1>loading...</h1>}
+          {error && (
+            <h2>
+              Oops! Something went wrong while loading the albums, please try
+              again in a few minutes...
+            </h2>
+          )}
           {albums &&
-            albums.map((a) => (
-              <LandingVinyl
-                key={a.id}
-                imgsrc={a.cover_image}
-                name={a.title}
-                info={a.genre[0]}
-                year={a.year}
-              />
-            ))}
+            albums
+              .filter((a) => a.header === true)
+              .map((a) => (
+                <LandingVinyl
+                  key={a.id}
+                  imgsrc={a.imgsrc}
+                  artist={a.artist}
+                  album={a.album}
+                  year={a.year}
+                  genre={a.genre}
+                  header={a.header}
+                />
+              ))}
         </div>
       </div>
       <div className={landing.soon}>
