@@ -1,4 +1,4 @@
-import { Outlet } from "react-router-dom";
+import { Outlet, useLocation } from "react-router-dom";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import { token } from "../components/Albums";
@@ -9,7 +9,13 @@ function Layout() {
   const [albums, setAlbums] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(false);
-  const [selected, setSelected] = useState("home");
+
+  //in order to prevent it from changing back to home when reloading
+  const location = useLocation();
+  const [selected, setSelected] = useState(() => {
+    const path = location.pathname.slice(1); //slincing the "/"
+    return path || "home";
+  });
 
   useEffect(() => {
     const cached = localStorage.getItem("albums");

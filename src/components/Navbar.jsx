@@ -2,8 +2,6 @@ import navbar from "../styles/navbar.module.css";
 import { RiShoppingCartLine } from "react-icons/ri";
 import IconBtn from "./IconBtn";
 import Navbtn from "./NavBtn";
-import { useState } from "react";
-import { useOutletContext } from "react-router-dom";
 
 function Navbar({ selected, setSelected }) {
   return (
@@ -31,7 +29,7 @@ function Navbar({ selected, setSelected }) {
         <IconBtn
           classN={navbar.cart}
           Icon={RiShoppingCartLine}
-          route={"/shop/cart"}
+          route={"/cart"}
           setSelected={setSelected}
           selected={selected}
           textcontent="cart"
