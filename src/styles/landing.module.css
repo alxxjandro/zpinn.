@@ -90,12 +90,12 @@
   border-color: #a3a3a3; /* o un color más oscuro si quieres */
 }
 
-.card > h1 {
+.card > div > h1 {
   padding-top: 1.6rem;
   font-size: var(--text-5);
 }
 
-.card > h2 {
+.card > div > h2 {
   font-weight: 100;
   font-size: var(--text-3);
 }
@@ -182,6 +182,46 @@
   font-weight: bold;
 }
 
+.price {
+  font-size: var(--text-5) !important;
+  display: flex;
+  padding: 1rem 0 0 0;
+}
+
+.price > h1 {
+  flex: 1;
+}
+
+.price > div {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  margin-left: 10px;
+}
+
+.price > div > button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 80px;
+  min-height: 40px;
+  background-color: var(--color-bg);
+  border: solid 1px var(--color-border);
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.price > div > button:hover {
+  background-color: #dcdcdc;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.price > div > button:active {
+  background-color: #c0c0c0;
+  transform: scale(0.99);
+}
+
 /* media querys */
 @media (min-width: 481px) and (max-width: 1024px) {
   .overlay > h1 {
@@ -221,11 +261,11 @@
     padding: 1rem;
   }
 
-  .card > h1 {
+  .card > div > h1 {
     font-size: var(--text-4);
   }
 
-  .card > h2 {
+  .card > div > h2 {
     font-size: var(--text-2);
   }
 
@@ -306,14 +346,6 @@
     padding: 1rem;
   }
 
-  .card > h1 {
-    font-size: var(--text-3);
-  }
-
-  .card > h2 {
-    font-size: var(--text-1);
-  }
-
   .img {
     max-width: 240px;
     min-height: 240px;
@@ -344,5 +376,53 @@
 
   .credits {
     font-size: var(--text-1);
+  }
+
+  .card {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    align-items: center;
+    min-width: 360px;
+    min-height: auto;
+  }
+
+  .img {
+    max-width: 90px;
+    min-height: 90px;
+    border-radius: 0.75rem;
+    flex-shrink: 0;
+  }
+
+  .card > div > h1,
+  .card > div > h2 {
+    padding: 0;
+  }
+
+  .card > div > h1 {
+    font-size: var(--text-2);
+  }
+
+  .card > div > h2 {
+    font-size: var(--text-1);
+    font-weight: 300;
+  }
+
+  .price {
+    align-items: center;
+    display: flex;
+    margin: 0.4rem 0 0 0;
+    padding: 0;
+  }
+
+  .price h1 {
+    font-size: var(--text-4);
+  }
+
+  .price > div > button {
+    font-size: 10px;
+    min-width: 50px;
+    min-height: 30px;
+    padding: 0 0.4rem;
   }
 }

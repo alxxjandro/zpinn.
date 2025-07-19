@@ -34,7 +34,7 @@ function Shop() {
 
   function handleLike(id) {
     const updated = albums.map((a) =>
-      a.id === id ? { ...a, like: !a.like } : a
+      a.id === id ? { ...a, like: !a.like } : a,
     );
     localStorage.setItem("albums", JSON.stringify(updated)); //update localstorage
     setAlbums(updated);
