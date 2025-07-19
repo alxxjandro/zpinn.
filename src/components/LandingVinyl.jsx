@@ -12,7 +12,7 @@ function LandingVinyl({
   price,
   handleLike,
   like,
-  handleCart
+  handleCart,
 }) {
   return (
     <div className={landing.card}>

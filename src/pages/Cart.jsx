@@ -4,7 +4,8 @@ import { useOutletContext } from "react-router-dom";
 import { FaTrashAlt } from "react-icons/fa";
 
 function Cart() {
-  const { albums, cartItems, loading, error, setCartItems } = useOutletContext();
+  const { albums, cartItems, loading, error, setCartItems } =
+    useOutletContext();
   const [total, setTotal] = useState(0);
 
   useEffect(() => {
@@ -14,7 +15,7 @@ function Cart() {
     }
 
     const sum = cartItems.reduce((acc, id) => {
-      const album = albums.find(a => a.id === id);
+      const album = albums.find((a) => a.id === id);
       return album ? acc + album.price : acc;
     }, 0);
 
@@ -22,7 +23,7 @@ function Cart() {
   }, [albums, cartItems]);
 
   function handleDelete(id) {
-    setCartItems(prev => prev.filter(item => item !== id));
+    setCartItems((prev) => prev.filter((item) => item !== id));
   }
 
   function createCard(id) {
@@ -36,7 +37,9 @@ function Cart() {
         <div className={cartstyle.details}>
           <h3>{album.album}</h3>
           <p>{album.artist}</p>
-          <p>{album.genre} • {album.year}</p>
+          <p>
+            {album.genre} • {album.year}
+          </p>
           <p className={cartstyle.price}>${album.price}</p>
         </div>
         <button
@@ -50,6 +53,12 @@ function Cart() {
     );
   }
 
+  function checkout() {
+    alert(
+      "Maybe someday these records will spin for real, thanks for browsing!  ",
+    );
+  }
+
   return (
     <div className={cartstyle.MainContainer}>
       <h1 className={cartstyle.title}>
@@ -59,26 +68,35 @@ function Cart() {
         <div className={cartstyle.records}>
           {loading && <h1>Loading...</h1>}
           {error && <h1>An error occurred! Try again in a few minutes...</h1>}
-          {cartItems.length > 0 ? cartItems.map((id) => createCard(id)) : <h1 className={cartstyle.empty}>Your cart is empty :(</h1> }
-
+          {cartItems.length > 0 ? (
+            cartItems.map((id) => createCard(id))
+          ) : (
+            <h1 className={cartstyle.empty}>Your cart is empty :(</h1>
+          )}
         </div>
 
         <div className={cartstyle.total}>
           <h2>Order summary</h2>
           <div className={cartstyle.subtotal}>
             <h2>Subtotal...</h2>
-            <h2><span className="strong">${total}</span></h2>
+            <h2>
+              <span className="strong">${total}</span>
+            </h2>
           </div>
           <div className={cartstyle.shipping}>
             <h2>Shipping...</h2>
-            <h2><span className="strong">free</span></h2>
+            <h2>
+              <span className="strong">free</span>
+            </h2>
           </div>
           <hr />
           <div className={cartstyle.totalprice}>
             <h2>Total...</h2>
-            <h2><span className="strong">${total}</span></h2>
+            <h2>
+              <span className="strong">${total}</span>
+            </h2>
           </div>
-          <button>Checkout</button>
+          <button onClick={() => checkout()}>Checkout</button>
         </div>
       </div>
     </div>

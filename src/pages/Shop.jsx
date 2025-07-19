@@ -4,7 +4,8 @@ import { useOutletContext } from "react-router-dom";
 import LandingVinyl from "../components/LandingVinyl";
 
 function Shop() {
-  const { setAlbums, albums, loading, error, setCartItems, cartItems } = useOutletContext();
+  const { setAlbums, albums, loading, error, setCartItems, cartItems } =
+    useOutletContext();
   const sortingOptions = ["Entry", "Genre", "Year", "Price", "Likes"];
   const [filter, setFilter] = useState("Entry");
   const [sortedAlbums, setSortedAlbums] = useState([]);
@@ -40,11 +41,11 @@ function Shop() {
     setAlbums(updated);
   }
 
-  function handleCart(id){
-    if (!cartItems.includes(id)){
+  function handleCart(id) {
+    if (!cartItems.includes(id)) {
       console.log("adding to the cart");
-      setCartItems(p => [...p, id]);
-    } else if(cartItems.includes(id)){
+      setCartItems((p) => [...p, id]);
+    } else if (cartItems.includes(id)) {
       console.log("already in the cart");
     }
   }

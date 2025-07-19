@@ -20,7 +20,7 @@ function Layout() {
     const saved = localStorage.getItem("cartItems");
     return saved ? JSON.parse(saved) : [];
   });
-  
+
   useEffect(() => {
     localStorage.setItem("cartItems", JSON.stringify(cartItems));
   }, [cartItems]);
@@ -81,7 +81,16 @@ function Layout() {
     <div>
       <Navbar selected={selected} setSelected={setSelected} />
       <Outlet
-        context={{ setAlbums, albums, loading, selected, setSelected, error, cartItems, setCartItems }}
+        context={{
+          setAlbums,
+          albums,
+          loading,
+          selected,
+          setSelected,
+          error,
+          cartItems,
+          setCartItems,
+        }}
       />
       <Footer />
     </div>
