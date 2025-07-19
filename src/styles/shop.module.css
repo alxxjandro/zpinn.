@@ -1,0 +1,86 @@
+
+.shop{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--color-bg);
+}
+
+.top{
+  padding: 1rem 8rem;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+
+.top > h1{
+  font-weight: 100;
+}
+
+.top > div{
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+  font-weight: 500;
+}
+
+.top > div > select{
+  border: solid 2px var(--color-border);
+  border-radius: 8px;
+  padding: .5rem 1rem;
+  font-size: var(--text-2);
+  font-family: var(--font-main);
+  cursor: pointer;
+  transform: all .2s ease;
+}
+
+.cards{
+  max-width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3rem;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem 0rem 3rem 0rem;
+}
+
+.price {
+  font-size: var(--text-5) !important;
+  display: flex;
+  padding: 1rem 0 0 0 ;
+}
+
+.price > h1 {
+  flex: 1;
+}
+
+.price > div {
+  display: flex;
+  align-items: center;
+  gap: .35rem;
+  margin-left: 10px;
+}
+
+.price > div > button{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 80px;
+  min-height: 40px;
+  background-color: var(--color-bg);
+  border: solid 1px var(--color-border);
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.price > div > button:hover {
+  background-color: #dcdcdc; 
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.price > div > button:active {
+  background-color: #c0c0c0; 
+  transform: scale(0.99);
+}

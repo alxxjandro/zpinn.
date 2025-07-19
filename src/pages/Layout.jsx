@@ -33,6 +33,7 @@ function Layout() {
         );
         const results = await Promise.all(albumLinks.map((a) => fetchAlbum(a)));
         setAlbums(results);
+        console.log(results)
         localStorage.setItem("albums", JSON.stringify(results)); // Cache it!
         setLoading(false);
       } catch (e) {
@@ -62,6 +63,8 @@ function Layout() {
       year: data.results[0].year,
       genre: data.results[0].genre[0],
       header: a.header, //boolean for being displayed on the landing page
+      price: a.price,
+      like: a.like
     };
     return obj;
   }
@@ -69,7 +72,7 @@ function Layout() {
   return (
     <div>
       <Navbar selected={selected} setSelected={setSelected} />
-      <Outlet context={{ albums, loading, selected, setSelected, error }} />
+      <Outlet context={{ setAlbums, albums, loading, selected, setSelected, error }} />
       <Footer />
     </div>
   );

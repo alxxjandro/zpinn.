@@ -81,10 +81,13 @@
   max-width: 440px;
   min-height: 400px;
   transition: all 0.2s ease;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
 }
 
 .card:hover {
-  transform: translate(0, -1%);
+  transform: scale(1.005);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+  border-color: #a3a3a3; /* o un color más oscuro si quieres */
 }
 
 .card > h1 {
